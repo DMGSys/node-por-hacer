@@ -13,7 +13,17 @@ const guardaDB = () => {
     });
 }
 
+const cargarDB = () => {
+    try {
+        listadoPorHacer = require('../db/data.json')
+    } catch (error) {
+        listadoPorHacer = [];
+    }
+
+}
+
 const crear = (descripcion) => {
+    cargarDB();
     let porHacer = {
         descripcion,
         completado: false
@@ -22,8 +32,12 @@ const crear = (descripcion) => {
     guardaDB();
     return porHacer;
 }
-
+const getListados = () => {
+    cargarDB();
+    return listadoPorHacer;
+}
 
 module.exports = {
-    crear
+    crear,
+    getListados
 }
