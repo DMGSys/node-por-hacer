@@ -1,6 +1,6 @@
 //const argv = require(`yargs`).argv;
 
-const argv = require('./config/yargs').default.argv;
+const argv = require('./config/yargs');
 const porHacer = require('./por-hacer/por-hacer').default;
 const colors = require('colors');
 console.log(argv);
@@ -27,6 +27,11 @@ switch (comando) {
 
         let actulizado = porHacer.actulizadar(argv.descripcion, argv.completado);
         console.log(actulizado);
+        break;
+
+    case 'borrar':
+        let borrado = porHacer.borrar(argv.descripcion);
+        console.log(borrado);
         break;
 
     default:
