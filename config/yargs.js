@@ -21,6 +21,6 @@ const argv = require('yargs')
     .argv;
 
 
-export default {
+module.exports = {
     argv
 }
