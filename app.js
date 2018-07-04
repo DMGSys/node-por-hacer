@@ -1,7 +1,7 @@
 //const argv = require(`yargs`).argv;
 
-const argv = require('./config/yargs').default.default.argv;
-const porHacer = require('./por-hacer/por-hacer');
+const argv = require('./config/yargs').default.argv;
+const porHacer = require('./por-hacer/por-hacer').default;
 const colors = require('colors');
 console.log(argv);
 
@@ -24,7 +24,9 @@ switch (comando) {
         break;
 
     case 'actualizar':
-        console.log(`Actualiza una tarea por hacer`);
+
+        let actulizado = porHacer.actulizadar(argv.descripcion, argv.completado);
+        console.log(actulizado);
         break;
 
     default:
