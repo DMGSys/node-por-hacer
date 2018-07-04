@@ -17,6 +17,10 @@
             descripcion
 
         })
+        .command('Listar', 'Lista tareas por hacer', {
+            descripcion
+
+        })
         .command('actualizar ', 'Actualizar el estado completado de una tarea', {
             descripcion,
             completado
